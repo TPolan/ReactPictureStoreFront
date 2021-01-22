@@ -1,0 +1,10 @@
+.form-root {
+    width: 80%;
+    padding: 30px 30px ;
+    align-items: center;
+}
+.form-root label input {
+    height: 0;
+    width: 0;
+    opacity: 0;
+}
