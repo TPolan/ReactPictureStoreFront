@@ -3,7 +3,6 @@
 import firebase from "firebase/app";
 
 // Add the Firebase services that you want to use
-import "firebase/database";
 import "firebase/storage";
 import "firebase/firestore";
 
@@ -22,4 +21,6 @@ firebase.initializeApp(firebaseConfig);
 
 const storage = firebase.storage();
 const firestore = firebase.firestore();
-export {storage, firestore};
+const firestoreTimestamp = firebase.firestore.FieldValue.serverTimestamp;
+
+export {storage, firestore, firestoreTimestamp};

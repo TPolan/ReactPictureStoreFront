@@ -2,11 +2,11 @@ import React, {useState} from 'react';
 import {Grid} from "@material-ui/core";
 import './UploadForm.css';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
+import ProgressBar from "../ProgressBar/ProgressBar";
 
 const UploadForm = props => {
     const [file, setFile] = useState(null);
     const [error, setError] = useState(null);
-
     const allowedTypes = ['image/jpeg', 'image/png']
 
     const handleChange = (event) => {
@@ -19,6 +19,9 @@ const UploadForm = props => {
         }
     };
 
+    console.log(file)
+    console.log('file upload form')
+
     return (
         <Grid container justify={"center"}>
             <Grid item>
@@ -30,6 +33,7 @@ const UploadForm = props => {
                     <div className="output">
                         {error && <div className="error">{error}</div>}
                         {file && <div>{file.name}</div>}
+                        {file && <ProgressBar file={file}/>}
                     </div>
                 </form>
             </Grid>
