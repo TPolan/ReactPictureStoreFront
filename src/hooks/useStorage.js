@@ -6,8 +6,7 @@ const useStorage = file => {
     const [error, setError] = useState(null);
     const [url, setUrl] = useState(null);
 
-    useEffect( (file)=> {
-        console.log(file);
+    useEffect( ()=> {
         const storageRef = storage.ref(file.name);
         const collectionRef = firestore.collection('images');
 
@@ -18,8 +17,8 @@ const useStorage = file => {
             setError(err);
         }, async () => {
             const url = await storageRef.getDownloadURL();
-            const createdAt = firestoreTimestamp()
-            await collectionRef.add({url, createdAt})
+            const createdAt = firestoreTimestamp();
+            collectionRef.add({url, createdAt});
             setUrl(url);
         })
     }, [file])

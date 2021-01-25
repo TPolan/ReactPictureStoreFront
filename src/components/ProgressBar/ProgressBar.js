@@ -1,11 +1,16 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import useStorage from "../../hooks/useStorage";
 import LinearProgress from '@material-ui/core/LinearProgress';
 
-const ProgressBar = file => {
-    const {progress, error} = useStorage(file);
-    console.log('file upload form')
-    console.log(file)
+const ProgressBar = ({file, setFile}) => {
+    const {progress, error , url} = useStorage(file);
+
+    useEffect(() => {
+        if (url) {
+            setFile(null);
+        }
+    }, [url, setFile]);
+
     return (
         <>
             <LinearProgress variant="determinate" value={progress}/>

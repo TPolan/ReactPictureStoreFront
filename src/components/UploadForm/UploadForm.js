@@ -19,9 +19,6 @@ const UploadForm = props => {
         }
     };
 
-    console.log(file)
-    console.log('file upload form')
-
     return (
         <Grid container justify={"center"}>
             <Grid item>
@@ -33,7 +30,7 @@ const UploadForm = props => {
                     <div className="output">
                         {error && <div className="error">{error}</div>}
                         {file && <div>{file.name}</div>}
-                        {file && <ProgressBar file={file}/>}
+                        {file && <ProgressBar file={file} setFile={setFile}/>}
                     </div>
                 </form>
             </Grid>
