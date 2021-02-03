@@ -1,3 +1,7 @@
-.good {
-    width: 33%;
+.img-wrap{
+    width: 30px;
+    height: 30px;
+}
+.img-wrap img{
+    object-fit: scale-down;
 }

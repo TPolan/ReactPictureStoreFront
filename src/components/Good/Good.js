@@ -1,11 +1,11 @@
 import React from 'react';
 import './Good.css';
 
-const Good = props => {
+const Good = ({url}) => {
 
     return (
-        <div item className={'good'}>
-
+        <div className='image-wrap'>
+            <img src={url} alt='uploaded'/>
         </div>
     )
 }
